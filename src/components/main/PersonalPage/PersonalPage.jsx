@@ -39,7 +39,10 @@ export default function PersonalPage() {
       {PERSONAL_INFO.map((field, index) => {
         return (
           <div className="space-y-1" key={`${field.id}-${index}`}>
-            <label htmlFor="name" className="text-sm text-marine_blue">
+            <label
+              htmlFor={`personal_${field.id}`}
+              className="text-sm text-marine_blue"
+            >
               {field.label}
             </label>
             <input

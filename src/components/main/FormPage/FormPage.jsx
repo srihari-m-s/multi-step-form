@@ -1,10 +1,18 @@
 import PersonalPage from "../PersonalPage/PersonalPage";
+import SelectPlan from "../SelectPlan/SelectPlan";
+
+const FORMS = {
+  1: <PersonalPage />,
+  2: <SelectPlan />,
+  3: <></>,
+  4: <></>,
+};
 
 export default function FormPage({ activePage }) {
   return (
     <div className="relative h-[calc(100dvh-172px)] bg-magnolia flex flex-col">
       <div className="bg-white shadow-lg absolute left-0 right-0 -top-[73px] mx-4 rounded-xl px-6 py-8">
-        <PersonalPage />
+        {FORMS[activePage]}
       </div>
       <div className="bg-white p-4 mt-auto flex justify-between">
         {activePage !== 1 ? (
