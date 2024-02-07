@@ -30,4 +30,8 @@
     --magnolia: 217deg 100% 97%;
     --alabaster: 231deg 100% 99%;
   }
+
+  body {
+    font-family: "Ubuntu-reg", sans-serif;
+  }
 }

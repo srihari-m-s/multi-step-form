@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="container mx-auto">
-      <div className="grid relative">
+      <div className="h-screen">
         <Sidebar activePage={activePage} handlePageClick={handlePageClick} />
         <FormPage activePage={activePage} />
       </div>
