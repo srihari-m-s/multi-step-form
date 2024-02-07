@@ -1,8 +1,22 @@
+import { useState } from "react";
+import "./App.css";
+import Sidebar from "./components/layout/Sidebar/Sidebar";
+import FormPage from "./components/main/FormPage/FormPage";
+
 function App() {
+  const [activePage, setActivePage] = useState("1");
+
+  function handlePageClick(e) {
+    setActivePage(e.target.id);
+  }
+
   return (
-    <>
-      <h1 className="text-red-500">Hello</h1>
-    </>
+    <div className="container mx-auto">
+      <div className="grid relative">
+        <Sidebar activePage={activePage} handlePageClick={handlePageClick} />
+        <FormPage activePage={activePage} />
+      </div>
+    </div>
   );
 }
 

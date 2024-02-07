@@ -1,0 +1,8 @@
+.sidebar {
+  background-image: url("/src/assets/images/bg-sidebar-mobile.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+
+  width: 100%;
+  height: 172px;
+}
