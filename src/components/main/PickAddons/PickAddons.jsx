@@ -1,3 +1,5 @@
+import Card from "../../ui/Card/Card";
+
 const ADDONS = [
   {
     label: "Online service",
@@ -34,37 +36,35 @@ export default function PickAddons({ isYearly }) {
   }
 
   return (
-    <form onSubmit={handleAddon} className="space-y-4">
-      <h1 className="text-marine_blue text-2xl font-primary_bold">
-        Pick add-ons
-      </h1>
-      <p className="text-cool_gray">
-        Add-ons help enhance your gaming experience.
-      </p>
-
-      {ADDONS.map((field, index) => {
-        return (
-          <div className="plan-label-checkbox" key={`${field.id}-${index}`}>
-            <input
-              type="checkbox"
-              name={field.name}
-              id={field.id}
-              defaultChecked={field.defaultChecked}
-            />
-            <label htmlFor={field.id} className="flex-grow">
-              <p className="text-marine_blue font-primary_medium">
-                {field.label}
-              </p>
-              <p className="text-cool_gray text-xs">{field.subText}</p>
-            </label>
-            <small className="text-purplish_blue text-xs">
-              +${isYearly ? field.yearly : field.monthly}/
-              {isYearly ? "yr" : "mo"}
-            </small>
-          </div>
-        );
-      })}
-    </form>
+    <Card
+      heading={"Pick add-ons"}
+      para={"Add-ons help enhance your gaming experience."}
+    >
+      <form onSubmit={handleAddon} className="space-y-4">
+        {ADDONS.map((field, index) => {
+          return (
+            <div className="plan-label-checkbox" key={`${field.id}-${index}`}>
+              <input
+                type="checkbox"
+                name={field.name}
+                id={field.id}
+                defaultChecked={field.defaultChecked}
+              />
+              <label htmlFor={field.id} className="flex-grow">
+                <p className="text-marine_blue font-primary_medium">
+                  {field.label}
+                </p>
+                <p className="text-cool_gray text-xs">{field.subText}</p>
+              </label>
+              <small className="text-purplish_blue text-xs">
+                +${isYearly ? field.yearly : field.monthly}/
+                {isYearly ? "yr" : "mo"}
+              </small>
+            </div>
+          );
+        })}
+      </form>
+    </Card>
   );
 }
 

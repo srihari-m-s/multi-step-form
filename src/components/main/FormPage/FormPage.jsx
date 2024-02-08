@@ -1,3 +1,4 @@
+import FinishUp from "../FinishUp/FinishUp";
 import PersonalPage from "../PersonalPage/PersonalPage";
 import PickAddons from "../PickAddons/PickAddons";
 import SelectPlan from "../SelectPlan/SelectPlan";
@@ -6,7 +7,7 @@ const FORMS = {
   1: <PersonalPage />,
   2: <SelectPlan />,
   3: <PickAddons />,
-  4: <></>,
+  4: <FinishUp />,
 };
 
 export default function FormPage({ activePage }) {
