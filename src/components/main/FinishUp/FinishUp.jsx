@@ -10,7 +10,7 @@ export default function FinishUp({ isYearly }) {
       heading={"Finishing Up"}
       para={"Double-check everything looks OK before confirming."}
     >
-      <form onSubmit={handleFinish} className="space-y-4">
+      <form onSubmit={handleFinish} className="space-y-4" id="finishUp">
         <div className="bg-alabaster p-4 text-sm rounded-xl">
           <div className="flex items-center justify-between">
             <div>

@@ -40,7 +40,7 @@ export default function PickAddons({ isYearly }) {
       heading={"Pick add-ons"}
       para={"Add-ons help enhance your gaming experience."}
     >
-      <form onSubmit={handleAddon} className="space-y-4">
+      <form onSubmit={handleAddon} className="space-y-4" id="pickAddons">
         {ADDONS.map((field, index) => {
           return (
             <div className="plan-label-checkbox" key={`${field.id}-${index}`}>

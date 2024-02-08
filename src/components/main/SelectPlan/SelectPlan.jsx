@@ -39,7 +39,7 @@ export default function SelectPlan() {
       heading={"Select your plan"}
       para={"You have the option of monthly or yearly billing."}
     >
-      <form onSubmit={handleSelectPlan} className="space-y-4">
+      <form onSubmit={handleSelectPlan} className="space-y-4" id="selectPlan">
         {PLANS.map((plan, index) => {
           return (
             <div className="plan-label" key={`${plan.label}-${index}`}>
