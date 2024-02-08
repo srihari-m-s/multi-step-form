@@ -25,9 +25,13 @@ const PERSONAL_INFO = [
   },
 ];
 
-export default function PersonalPage() {
+export default function PersonalPage({ handleNext }) {
   function handlePersonalInfo(e) {
     e.preventDefault();
+
+    if (e.target.checkValidity()) {
+      handleNext();
+    }
   }
 
   return (

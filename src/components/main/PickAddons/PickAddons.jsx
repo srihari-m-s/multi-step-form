@@ -30,9 +30,10 @@ const ADDONS = [
   },
 ];
 
-export default function PickAddons({ isYearly }) {
+export default function PickAddons({ isYearly, handleNext }) {
   function handleAddon(e) {
     e.preventDefault();
+    handleNext();
   }
 
   return (

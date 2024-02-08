@@ -10,27 +10,31 @@ const PLANS = [
     monthly: 9,
     yearly: 90,
     icon: ArcadeIcon,
+    defaultChecked: true,
   },
   {
     label: "Advanced",
     monthly: 12,
     yearly: 120,
     icon: AdvancedIcon,
+    defaultChecked: false,
   },
   {
     label: "Pro",
     monthly: 15,
     yearly: 150,
     icon: ProIcon,
+    defaultChecked: false,
   },
 ];
 
-export default function SelectPlan() {
+export default function SelectPlan({ handleNext }) {
   // local states
   const [isYearly, setIsYearly] = useState(false);
 
   function handleSelectPlan(e) {
     e.preventDefault();
+    handleNext();
   }
 
   return (
@@ -70,6 +74,7 @@ export default function SelectPlan() {
                   id={`plan-${plan.label}`}
                   name="plan"
                   className="invisible"
+                  defaultChecked={plan.defaultChecked}
                 />
               </label>
             </div>

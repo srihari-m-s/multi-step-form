@@ -3,14 +3,27 @@ import PersonalPage from "../PersonalPage/PersonalPage";
 import PickAddons from "../PickAddons/PickAddons";
 import SelectPlan from "../SelectPlan/SelectPlan";
 
-const FORMS = {
-  1: { element: <PersonalPage />, formId: "personalPage" },
-  2: { element: <SelectPlan />, formId: "selectPlan" },
-  3: { element: <PickAddons />, formId: "pickAddons" },
-  4: { element: <FinishUp />, formId: "finishUp" },
-};
+export default function FormPage({ activePage, handleNext, handleBack }) {
+  const FORMS = {
+    1: {
+      element: <PersonalPage handleNext={handleNext} />,
+      formId: "personalPage",
+    },
+    2: {
+      element: <SelectPlan handleNext={handleNext} />,
+      formId: "selectPlan",
+    },
+    3: {
+      element: <PickAddons handleNext={handleNext} />,
+      formId: "pickAddons",
+    },
+    4: { element: <FinishUp />, formId: "finishUp" },
+  };
 
-export default function FormPage({ activePage }) {
+  function handleGoBack() {
+    handleBack();
+  }
+
   return (
     <div className="relative h-[calc(100dvh-172px)] bg-magnolia flex flex-col">
       <div className="bg-white shadow-lg absolute left-0 right-0 -top-[73px] mx-4 rounded-xl px-6 py-8">
@@ -21,6 +34,7 @@ export default function FormPage({ activePage }) {
           <button
             type="button"
             className="text-cool_gray font-primary_reg text-base"
+            onClick={handleGoBack}
           >
             Go Back
           </button>

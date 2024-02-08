@@ -10,11 +10,23 @@ function App() {
     setActivePage(e.target.id);
   }
 
+  function handleNext() {
+    setActivePage((prev) => String(+prev + 1));
+  }
+
+  function handleBack() {
+    setActivePage((prev) => String(+prev - 1));
+  }
+
   return (
     <div className="container mx-auto">
       <div className="h-screen">
         <Sidebar activePage={activePage} handlePageClick={handlePageClick} />
-        <FormPage activePage={activePage} />
+        <FormPage
+          activePage={activePage}
+          handleBack={handleBack}
+          handleNext={handleNext}
+        />
       </div>
     </div>
   );
