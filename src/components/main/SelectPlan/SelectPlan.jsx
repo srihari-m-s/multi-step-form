@@ -9,31 +9,28 @@ import { formActions } from "../../../contexts/FormContext/FormReducer";
 const PLANS = [
   {
     label: "Arcade",
-    monthly: 9,
-    yearly: 90,
+    id: "arcade",
     icon: ArcadeIcon,
     defaultChecked: true,
   },
   {
     label: "Advanced",
-    monthly: 12,
-    yearly: 120,
+    id: "advanced",
     icon: AdvancedIcon,
     defaultChecked: false,
   },
   {
     label: "Pro",
-    monthly: 15,
-    yearly: 150,
+    id: "pro",
     icon: ProIcon,
     defaultChecked: false,
   },
 ];
 
 export default function SelectPlan({ handleNext }) {
-  const { isYearly, dispatch } = useContext(FormContext);
+  const { state, Prices, dispatch } = useContext(FormContext);
   // local states
-  const [localYearly, setLocalYearly] = useState(() => isYearly);
+  const [localYearly, setLocalYearly] = useState(() => state.isYearly);
 
   function handleSelectPlan(e) {
     e.preventDefault();
@@ -41,9 +38,9 @@ export default function SelectPlan({ handleNext }) {
     const data = new FormData(e.currentTarget);
     const formData = Object.fromEntries(data);
 
-    formData.isYearly = formData.get("isYearly") === "on" ? true : false;
+    formData.isYearly = data.get("isYearly") === "on" ? true : false;
 
-    console.log(formData, data);
+    // console.log(formData, data);
 
     dispatch({
       type: formActions.UPDATE,
@@ -76,7 +73,11 @@ export default function SelectPlan({ handleNext }) {
                       {plan.label}
                     </p>
                     <small className="text-sm text-cool_gray">
-                      ${plan.monthly}/{localYearly ? "yr" : "mo"}
+                      $
+                      {localYearly
+                        ? Prices.yearly[plan.id]
+                        : Prices.monthly[plan.id]}
+                      /{localYearly ? "yr" : "mo"}
                     </small>
                     {localYearly ? (
                       <small className="text-xs text-marine_blue mt-1">
@@ -92,7 +93,9 @@ export default function SelectPlan({ handleNext }) {
                     name="plan"
                     value={plan.label}
                     className="invisible"
-                    defaultChecked={plan.defaultChecked}
+                    defaultChecked={
+                      state.plan === plan.label || plan.defaultChecked
+                    }
                   />
                 </label>
               </div>

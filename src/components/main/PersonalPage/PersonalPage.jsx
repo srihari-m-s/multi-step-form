@@ -29,13 +29,7 @@ const PERSONAL_INFO = [
 ];
 
 export default function PersonalPage({ handleNext }) {
-  const { name, email, phoneNumber, dispatch } = useContext(FormContext);
-
-  let personalDefaults = {
-    name: name,
-    email: email,
-    phoneNumber: phoneNumber,
-  };
+  const { state, dispatch } = useContext(FormContext);
 
   function handlePersonalInfo(e) {
     e.preventDefault();
@@ -68,7 +62,7 @@ export default function PersonalPage({ handleNext }) {
             <PersonalInput
               key={`${field.id}-${index}`}
               field={field}
-              defaultValue={personalDefaults[field.name]}
+              defaultValue={state[field.name]}
             />
           );
         })}

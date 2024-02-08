@@ -3,7 +3,9 @@ import "./Switch.css";
 import { FormContext } from "../../../contexts/FormContext/FormProvider";
 
 export default function Switch({ setIsYearly }) {
-  const { isYearly } = useContext(FormContext);
+  const {
+    state: { isYearly },
+  } = useContext(FormContext);
 
   function handleSwitchClick(e) {
     setIsYearly(e.target.checked);

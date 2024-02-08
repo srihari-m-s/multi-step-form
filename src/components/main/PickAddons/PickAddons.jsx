@@ -1,4 +1,7 @@
+import { useContext } from "react";
 import Card from "../../ui/Card/Card";
+import { FormContext } from "../../../contexts/FormContext/FormProvider";
+import { formActions } from "../../../contexts/FormContext/FormReducer";
 
 const ADDONS = [
   {
@@ -7,8 +10,6 @@ const ADDONS = [
     name: "onlineService",
     id: "onlineService",
     defaultChecked: true,
-    monthly: 1,
-    yearly: 10,
   },
   {
     label: "Larger storage",
@@ -16,8 +17,6 @@ const ADDONS = [
     name: "storage",
     id: "storage",
     defaultChecked: true,
-    monthly: 2,
-    yearly: 20,
   },
   {
     label: "Customizable profile",
@@ -25,14 +24,28 @@ const ADDONS = [
     name: "customProfile",
     id: "customProfile",
     defaultChecked: false,
-    monthly: 2,
-    yearly: 20,
   },
 ];
 
-export default function PickAddons({ isYearly, handleNext }) {
+export default function PickAddons({ handleNext }) {
+  const { Prices, state, dispatch } = useContext(FormContext);
+
   function handleAddon(e) {
     e.preventDefault();
+
+    const data = new FormData(e.currentTarget);
+    const formData = Object.fromEntries(data);
+
+    console.log(formData);
+
+    formData.onlineService = data.get("onlineService") === "on" ? true : false;
+    formData.storage = data.get("storage") === "on" ? true : false;
+    formData.customProfile = data.get("customProfile") === "on" ? true : false;
+
+    dispatch({
+      type: formActions.UPDATE,
+      payload: formData,
+    });
     handleNext();
   }
 
@@ -51,9 +64,8 @@ export default function PickAddons({ isYearly, handleNext }) {
               <input
                 type="checkbox"
                 name={field.name}
-                value={field.label}
                 id={field.id}
-                defaultChecked={field.defaultChecked}
+                defaultChecked={state[field.id]}
               />
               <label htmlFor={field.id} className="flex-grow cursor-pointer">
                 <p className="text-marine_blue font-primary_medium">
@@ -64,8 +76,11 @@ export default function PickAddons({ isYearly, handleNext }) {
                 </p>
               </label>
               <small className="text-purplish_blue text-xs lg:text-sm">
-                +${isYearly ? field.yearly : field.monthly}/
-                {isYearly ? "yr" : "mo"}
+                +$
+                {state.isYearly
+                  ? Prices.yearly[field.id]
+                  : Prices.monthly[field.id]}
+                /{state.isYearly ? "yr" : "mo"}
               </small>
             </div>
           );
