@@ -1,8 +1,10 @@
 import "./SelectPlan.css";
 import { ArcadeIcon, AdvancedIcon, ProIcon } from "../../../assets/images";
 import Switch from "../../ui/Switch/Switch";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Card from "../../ui/Card/Card";
+import { FormContext } from "../../../contexts/FormContext/FormProvider";
+import { formActions } from "../../../contexts/FormContext/FormReducer";
 
 const PLANS = [
   {
@@ -29,11 +31,25 @@ const PLANS = [
 ];
 
 export default function SelectPlan({ handleNext }) {
+  const { isYearly, dispatch } = useContext(FormContext);
   // local states
-  const [isYearly, setIsYearly] = useState(false);
+  const [localYearly, setLocalYearly] = useState(() => isYearly);
 
   function handleSelectPlan(e) {
     e.preventDefault();
+
+    const data = new FormData(e.currentTarget);
+    const formData = Object.fromEntries(data);
+
+    formData.isYearly = formData.get("isYearly") === "on" ? true : false;
+
+    console.log(formData, data);
+
+    dispatch({
+      type: formActions.UPDATE,
+      payload: formData,
+    });
+
     handleNext();
   }
 
@@ -60,9 +76,9 @@ export default function SelectPlan({ handleNext }) {
                       {plan.label}
                     </p>
                     <small className="text-sm text-cool_gray">
-                      ${plan.monthly}/{isYearly ? "yr" : "mo"}
+                      ${plan.monthly}/{localYearly ? "yr" : "mo"}
                     </small>
-                    {isYearly ? (
+                    {localYearly ? (
                       <small className="text-xs text-marine_blue mt-1">
                         2 months free
                       </small>
@@ -85,11 +101,17 @@ export default function SelectPlan({ handleNext }) {
         </div>
         {/* Switch */}
         <div className="p-4 bg-alabaster inline-flex items-center justify-around rounded-lg gap-4 w-full">
-          <p className={`${!isYearly ? "text-marine_blue" : "text-cool_gray"}`}>
+          <p
+            className={`${
+              !localYearly ? "text-marine_blue" : "text-cool_gray"
+            }`}
+          >
             Monthly
           </p>
-          <Switch setIsYearly={setIsYearly} />
-          <p className={`${isYearly ? "text-marine_blue" : "text-cool_gray"}`}>
+          <Switch setIsYearly={setLocalYearly} />
+          <p
+            className={`${localYearly ? "text-marine_blue" : "text-cool_gray"}`}
+          >
             Yearly
           </p>
         </div>
