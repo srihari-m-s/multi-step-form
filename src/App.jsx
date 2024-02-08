@@ -18,6 +18,10 @@ function App() {
     setActivePage((prev) => String(+prev - 1));
   }
 
+  function handleChange() {
+    setActivePage("1");
+  }
+
   return (
     <div className="container mx-auto h-screen lg:bg-magnolia lg:grid lg:place-items-center">
       <div className="lg:grid lg:grid-cols-[275px_calc(100%-275px)] lg:bg-white lg:h-[calc(568px+2*1rem)] lg:p-4 lg:rounded-xl lg:shadow-lg">
@@ -26,6 +30,7 @@ function App() {
           activePage={activePage}
           handleBack={handleBack}
           handleNext={handleNext}
+          handleChange={handleChange}
         />
       </div>
     </div>

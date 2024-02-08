@@ -1,8 +1,12 @@
 import Card from "../../ui/Card/Card";
 
-export default function FinishUp({ isYearly }) {
+export default function FinishUp({ isYearly, handleChange }) {
   function handleFinish(e) {
     e.preventDefault();
+  }
+
+  function handleChangeClick() {
+    handleChange();
   }
 
   return (
@@ -17,7 +21,13 @@ export default function FinishUp({ isYearly }) {
               <h4 className="text-marine_blue">
                 Arcade ({isYearly ? "monthly" : "yearly"})
               </h4>
-              <p className="text-cool_gray underline">Change</p>
+              <p
+                tabIndex={0}
+                className="text-cool_gray underline hover:text-purplish_blue cursor-pointer"
+                onClick={handleChangeClick}
+              >
+                Change
+              </p>
             </div>
             <p className="font-primary_bold text-marine_blue">
               ${9}/{isYearly ? "mo" : "yr"}

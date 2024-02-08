@@ -58,9 +58,11 @@ export default function PickAddons({ isYearly, handleNext }) {
                 <p className="text-marine_blue font-primary_medium">
                   {field.label}
                 </p>
-                <p className="text-cool_gray text-xs">{field.subText}</p>
+                <p className="text-cool_gray text-xs lg:text-sm">
+                  {field.subText}
+                </p>
               </label>
-              <small className="text-purplish_blue text-xs">
+              <small className="text-purplish_blue text-xs lg:text-sm">
                 +${isYearly ? field.yearly : field.monthly}/
                 {isYearly ? "yr" : "mo"}
               </small>

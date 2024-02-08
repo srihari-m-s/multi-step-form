@@ -4,7 +4,12 @@ import PersonalPage from "../PersonalPage/PersonalPage";
 import PickAddons from "../PickAddons/PickAddons";
 import SelectPlan from "../SelectPlan/SelectPlan";
 
-export default function FormPage({ activePage, handleNext, handleBack }) {
+export default function FormPage({
+  activePage,
+  handleNext,
+  handleBack,
+  handleChange,
+}) {
   const FORMS = {
     1: {
       element: <PersonalPage handleNext={handleNext} />,
@@ -18,7 +23,10 @@ export default function FormPage({ activePage, handleNext, handleBack }) {
       element: <PickAddons handleNext={handleNext} />,
       formId: "pickAddons",
     },
-    4: { element: <FinishUp />, formId: "finishUp" },
+    4: {
+      element: <FinishUp handleChange={handleChange} />,
+      formId: "finishUp",
+    },
   };
 
   return (
