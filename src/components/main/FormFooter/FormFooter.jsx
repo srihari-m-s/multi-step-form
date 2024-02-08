@@ -4,7 +4,7 @@ export default function FormFooter({ activePage, handleBack, formId }) {
   }
 
   return (
-    <div className="bg-white p-4 mt-auto flex justify-between lg:px-24 lg:py-0">
+    <div className="bg-white p-4 mt-auto flex justify-between lg:px-24 lg:pt-0 lg:pb-6">
       {activePage !== "1" ? (
         <button
           type="button"
@@ -19,7 +19,7 @@ export default function FormFooter({ activePage, handleBack, formId }) {
       {/* Submit */}
       <button
         type="submit"
-        className={`ms-auto text-white font-primary_reg text-base px-4 py-2 rounded ${
+        className={`ms-auto text-white font-primary_reg text-base px-4 py-2 lg:px-8 lg:py-4 rounded lg:rounded-lg ${
           activePage === "4" ? "bg-purplish_blue" : "bg-marine_blue"
         }`}
         form={formId}

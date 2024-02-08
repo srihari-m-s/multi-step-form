@@ -22,7 +22,7 @@ export default function FormPage({ activePage, handleNext, handleBack }) {
   };
 
   return (
-    <div className="relative h-[calc(100dvh-172px)] bg-magnolia flex flex-col lg:col-span-3 lg:bg-white lg:h-full lg:min-w-[635px]">
+    <div className="relative h-[calc(100dvh-172px)] bg-magnolia flex flex-col lg:bg-white lg:h-full lg:min-w-[635px]">
       <div className="bg-white shadow-lg absolute left-0 right-0 -top-[73px] mx-4 rounded-xl px-6 py-8 lg:static lg:shadow-none lg:mx-0 lg:px-24">
         {FORMS[activePage].element}
       </div>

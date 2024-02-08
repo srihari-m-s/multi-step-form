@@ -6,8 +6,8 @@ import FormPage from "./components/main/FormPage/FormPage";
 function App() {
   const [activePage, setActivePage] = useState("1");
 
-  function handlePageClick(e) {
-    setActivePage(e.target.id);
+  function handlePageClick(page) {
+    setActivePage(page);
   }
 
   function handleNext() {
@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div className="container mx-auto h-screen lg:bg-magnolia lg:grid lg:place-items-center">
-      <div className="lg:grid lg:grid-cols-4 lg:bg-white lg:h-[calc(568px+2*1rem)] lg:p-4 lg:rounded-xl lg:shadow-lg">
+      <div className="lg:grid lg:grid-cols-[275px_calc(100%-275px)] lg:bg-white lg:h-[calc(568px+2*1rem)] lg:p-4 lg:rounded-xl lg:shadow-lg">
         <Sidebar activePage={activePage} handlePageClick={handlePageClick} />
         <FormPage
           activePage={activePage}
