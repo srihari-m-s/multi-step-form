@@ -50,7 +50,7 @@ export default function PersonalPage() {
               id={`personal_${field.id}`}
               name={field.name}
               placeholder={`e.g. ${field.placeholder}`}
-              className="outline-none border border-neutral-300 rounded-[4px] py-2 px-4 font-primary_bold text-marine_blue focus:border-purplish_blue placeholder:font-primary_bold placeholder:text-cool_gray"
+              className="w-full outline-none border border-neutral-300 rounded-[4px] py-2 px-4 font-primary_bold text-marine_blue focus:border-purplish_blue placeholder:font-primary_bold placeholder:text-cool_gray"
             />
           </div>
         );

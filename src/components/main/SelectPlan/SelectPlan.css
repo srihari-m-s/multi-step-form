@@ -1,9 +1,0 @@
-.plan-label {
-  border: 1px solid #d4d4d4;
-  border-radius: 8px;
-
-  &:has(input:checked) {
-    border-color: hsl(var(--purplish-blue));
-    background-color: hsl(var(--alabaster));
-  }
-}
