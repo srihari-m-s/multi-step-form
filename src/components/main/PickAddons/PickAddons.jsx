@@ -44,14 +44,17 @@ export default function PickAddons({ isYearly, handleNext }) {
       <form onSubmit={handleAddon} className="space-y-4" id="pickAddons">
         {ADDONS.map((field, index) => {
           return (
-            <div className="plan-label-checkbox" key={`${field.id}-${index}`}>
+            <div
+              className="plan-label-checkbox cursor-pointer"
+              key={`${field.id}-${index}`}
+            >
               <input
                 type="checkbox"
                 name={field.name}
                 id={field.id}
                 defaultChecked={field.defaultChecked}
               />
-              <label htmlFor={field.id} className="flex-grow">
+              <label htmlFor={field.id} className="flex-grow cursor-pointer">
                 <p className="text-marine_blue font-primary_medium">
                   {field.label}
                 </p>

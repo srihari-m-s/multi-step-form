@@ -20,7 +20,9 @@ export default function FormFooter({ activePage, handleBack, formId }) {
       <button
         type="submit"
         className={`ms-auto text-white font-primary_reg text-base px-4 py-2 lg:px-8 lg:py-4 rounded lg:rounded-lg ${
-          activePage === "4" ? "bg-purplish_blue" : "bg-marine_blue"
+          activePage === "4"
+            ? "bg-purplish_blue hover:bg-purplish_blue/80"
+            : "bg-marine_blue hover:bg-marine_blue/80"
         }`}
         form={formId}
       >

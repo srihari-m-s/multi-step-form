@@ -16,7 +16,8 @@
   border: 1px solid #d4d4d4;
   border-radius: 8px;
 
-  &:has(input:checked) {
+  &:has(input:checked),
+  &:hover {
     border-color: hsl(var(--purplish-blue));
     background-color: hsl(var(--alabaster));
   }
@@ -31,7 +32,8 @@
   gap: 0.9rem;
   padding: 1rem 1rem;
 
-  &:has(input:checked) {
+  &:has(input:checked),
+  &:hover {
     border-color: hsl(var(--purplish-blue));
     background-color: hsl(var(--alabaster));
   }
