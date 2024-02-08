@@ -32,14 +32,14 @@ Users should be able to:
 ### Screenshot
 
 #### Desktop
-![Desktop view](https://github.com/srihari-m-s/multi-step-form/blob/master/public/screenshots/desktop1.png?raw=true)
-![Desktop view](https://github.com/srihari-m-s/multi-step-form/blob/master/public/screenshots/desktop2.png?raw=true)
+![Desktop view](https://github.com/srihari-m-s/multi-step-form/blob/main/public/screenshots/desktop1.png?raw=true)
+![Desktop view](https://github.com/srihari-m-s/multi-step-form/blob/main/public/screenshots/desktop2.png?raw=true)
 
 #### Mobile
-![Mobile view](https://github.com/srihari-m-s/multi-step-form/blob/master/public/screenshots/mobile1.png?raw=true)
-![Mobile view](https://github.com/srihari-m-s/multi-step-form/blob/master/public/screenshots/mobile2.png?raw=true)
-![Mobile view](https://github.com/srihari-m-s/multi-step-form/blob/master/public/screenshots/mobile3.png?raw=true)
-![Mobile view](https://github.com/srihari-m-s/multi-step-form/blob/master/public/screenshots/mobile4.png?raw=true)
+![Mobile view](https://github.com/srihari-m-s/multi-step-form/blob/main/public/screenshots/mobile1.png?raw=true)
+![Mobile view](https://github.com/srihari-m-s/multi-step-form/blob/main/public/screenshots/mobile2.png?raw=true)
+![Mobile view](https://github.com/srihari-m-s/multi-step-form/blob/main/public/screenshots/mobile3.png?raw=true)
+![Mobile view](https://github.com/srihari-m-s/multi-step-form/blob/main/public/screenshots/mobile4.png?raw=true)
 
 ### Links
 
