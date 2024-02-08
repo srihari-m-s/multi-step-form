@@ -74,6 +74,7 @@ export default function SelectPlan({ handleNext }) {
                     type="radio"
                     id={`plan-${plan.label}`}
                     name="plan"
+                    value={plan.label}
                     className="invisible"
                     defaultChecked={plan.defaultChecked}
                   />

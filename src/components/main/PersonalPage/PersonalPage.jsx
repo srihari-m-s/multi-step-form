@@ -1,5 +1,8 @@
+import { useContext } from "react";
 import Card from "../../ui/Card/Card";
 import PersonalInput from "../PersonalInput/PersonalInput";
+import { FormContext } from "../../../contexts/FormContext/FormProvider";
+import { formActions } from "../../../contexts/FormContext/FormReducer";
 
 const PERSONAL_INFO = [
   {
@@ -26,10 +29,25 @@ const PERSONAL_INFO = [
 ];
 
 export default function PersonalPage({ handleNext }) {
+  const { name, email, phoneNumber, dispatch } = useContext(FormContext);
+
+  let personalDefaults = {
+    name: name,
+    email: email,
+    phoneNumber: phoneNumber,
+  };
+
   function handlePersonalInfo(e) {
     e.preventDefault();
 
     if (e.target.checkValidity()) {
+      const data = new FormData(e.currentTarget);
+      const formData = Object.fromEntries(data);
+
+      dispatch({
+        type: formActions.UPDATE,
+        payload: formData,
+      });
       handleNext();
     }
   }
@@ -46,7 +64,13 @@ export default function PersonalPage({ handleNext }) {
         noValidate
       >
         {PERSONAL_INFO.map((field, index) => {
-          return <PersonalInput key={`${field.id}-${index}`} field={field} />;
+          return (
+            <PersonalInput
+              key={`${field.id}-${index}`}
+              field={field}
+              defaultValue={personalDefaults[field.name]}
+            />
+          );
         })}
       </form>
     </Card>

@@ -51,6 +51,7 @@ export default function PickAddons({ isYearly, handleNext }) {
               <input
                 type="checkbox"
                 name={field.name}
+                value={field.label}
                 id={field.id}
                 defaultChecked={field.defaultChecked}
               />

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function PersonalInput({ field }) {
+export default function PersonalInput({ field, defaultValue }) {
   const [invalid, setInvalid] = useState(false);
 
   function handleInvalid() {
@@ -39,6 +39,7 @@ export default function PersonalInput({ field }) {
         required
         onInvalid={handleInvalid}
         onChange={handleChange}
+        defaultValue={defaultValue}
       />
     </div>
   );
