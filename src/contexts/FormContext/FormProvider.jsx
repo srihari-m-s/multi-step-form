@@ -5,7 +5,7 @@ const initialState = {
   name: "",
   email: "",
   phoneNumber: "",
-  plan: "",
+  plan: "arcade",
   onlineService: true,
   storage: true,
   customProfile: false,

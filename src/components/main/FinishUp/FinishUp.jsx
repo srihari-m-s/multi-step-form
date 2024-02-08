@@ -18,7 +18,10 @@ export default function FinishUp({ handleChange, handleConfirm }) {
   function handleFinish(e) {
     e.preventDefault();
 
-    const response = window.confirm(JSON.stringify(state, null, 2));
+    const formData = { ...state };
+    formData.totalAmount = totalAmount;
+
+    const response = window.confirm(JSON.stringify(formData, null, 2));
     if (response) {
       handleConfirm();
     }
