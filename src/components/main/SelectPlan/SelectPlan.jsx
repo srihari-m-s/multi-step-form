@@ -91,11 +91,9 @@ export default function SelectPlan({ handleNext }) {
                     type="radio"
                     id={`plan-${plan.label}`}
                     name="plan"
-                    value={plan.label}
+                    value={plan.id}
                     className="invisible"
-                    defaultChecked={
-                      state.plan === plan.label || plan.defaultChecked
-                    }
+                    defaultChecked={state.plan === plan.id}
                   />
                 </label>
               </div>

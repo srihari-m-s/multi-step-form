@@ -89,7 +89,3 @@ export default function PickAddons({ handleNext }) {
     </Card>
   );
 }
-
-PickAddons.defaultProps = {
-  isYearly: true,
-};
