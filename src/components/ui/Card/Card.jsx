@@ -8,7 +8,7 @@ export default function Card({ heading, para, children }) {
       ) : (
         ""
       )}
-      {para ? <p className="text-cool_gray">{para}</p> : ""}
+      {para ? <p className="text-cool_gray break-words">{para}</p> : ""}
 
       {/* Children */}
       {children}

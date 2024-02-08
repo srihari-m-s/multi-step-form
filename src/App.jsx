@@ -19,8 +19,8 @@ function App() {
   }
 
   return (
-    <div className="container mx-auto">
-      <div className="h-screen">
+    <div className="container mx-auto h-screen lg:bg-magnolia lg:grid lg:place-items-center">
+      <div className="lg:grid lg:grid-cols-4 lg:bg-white lg:h-[calc(568px+2*1rem)] lg:p-4 lg:rounded-xl lg:shadow-lg">
         <Sidebar activePage={activePage} handlePageClick={handlePageClick} />
         <FormPage
           activePage={activePage}

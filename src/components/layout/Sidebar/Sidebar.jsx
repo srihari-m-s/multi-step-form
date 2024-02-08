@@ -2,7 +2,7 @@ const PAGES = ["1", "2", "3", "4"];
 
 export default function Sidebar({ activePage, handlePageClick }) {
   return (
-    <aside className="sidebar flex justify-center items-start">
+    <aside className="sidebar flex justify-center items-start rounded-xl">
       <div className="flex items-center gap-4 mt-6">
         {PAGES.map((page, index) => {
           return (
