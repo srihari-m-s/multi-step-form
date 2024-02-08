@@ -43,8 +43,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Frontend-mentor solution](https://www.frontendmentor.io/solutions/mobile-first-approach-of-multistep-form-using-react-and-tailwind-YhT9zJxC_L)
+- Live Site URL: [Live site](https://srihari-m-s.github.io/multi-step-form/)
 
 ## My process
 
