@@ -41,7 +41,7 @@ export default function FormPage({
   }
 
   return (
-    <div className="relative h-[calc(100dvh-172px)] bg-magnolia flex flex-col lg:bg-white lg:h-full lg:min-w-[635px]">
+    <main className="relative h-[calc(100dvh-172px)] bg-magnolia flex flex-col lg:bg-white lg:h-full lg:min-w-[635px]">
       <div
         className="bg-white shadow-lg absolute left-0 right-0 -top-[73px] mx-4 rounded-xl px-6 py-8 lg:static lg:shadow-none lg:mx-0 lg:px-24
        lg:h-full"
@@ -63,6 +63,6 @@ export default function FormPage({
       ) : (
         ""
       )}
-    </div>
+    </main>
   );
 }
