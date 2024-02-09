@@ -29,8 +29,10 @@ export default function Sidebar({ activePage, handlePageClick }) {
               </span>
 
               <span className="hidden lg:grid uppercase text-left">
-                <p className="text-pastel_blue text-sm">STEP {page}</p>
-                <p className="text-white font-primary_bold">{label}</p>
+                <span className="text-pastel_blue text-sm">STEP {page}</span>
+                <span className="text-white font-primary_bold text-base">
+                  {label}
+                </span>
               </span>
             </button>
           );
